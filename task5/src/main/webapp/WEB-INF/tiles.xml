@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+    <definition name="base.definition" template="/WEB-INF/views/template.jsp">
+        <put-attribute name="title" value="TestTiles" />
+        <put-attribute name="header" value="/WEB-INF/views/header.jsp" />
+        <put-attribute name="menu" value="/WEB-INF/views/menu.jsp" />
+        <put-attribute name="body" value="" />
+        <put-attribute name="footer" value="/WEB-INF/views/footer.jsp" />
+    </definition>
+
+    <definition name="home" extends="base.definition">
+        <put-attribute name="title" value="主页" />
+        <put-attribute name="body" value="/WEB-INF/views/home.jsp" />
+    </definition>
+
+    <definition name="job" extends="base.definition">
+        <put-attribute name="title" value="职业" />
+        <put-attribute name="body" value="/WEB-INF/views/job.jsp" />
+    </definition>
+
+    <definition name="student" extends="base.definition">
+        <put-attribute name="title" value="学员" />
+        <put-attribute name="body" value="/WEB-INF/views/student.jsp" />
+    </definition>
+
+    <definition name="partner" extends="base.definition">
+        <put-attribute name="title" value="关于" />
+        <put-attribute name="body" value="/WEB-INF/views/partner.jsp" />
+    </definition>
+
+    <definition name="addStudent" extends="base.definition">
+        <put-attribute name="title" value="学员添加" />
+        <put-attribute name="body" value="/WEB-INF/views/addStudent.jsp" />
+    </definition>
+
+    <definition name="editStudent" extends="base.definition">
+        <put-attribute name="title" value="学员编辑" />
+        <put-attribute name="body" value="/WEB-INF/views/editStudent.jsp" />
+    </definition>
+
+    <definition name="studentJson" extends="base.definition">
+        <put-attribute name="title" value="学员查询" />
+        <put-attribute name="body" value="/WEB-INF/views/studentJson.jsp" />
+    </definition>
+
+    <definition name="login" extends="base.definition">
+        <put-attribute name="title" value="登陆界面" />
+        <put-attribute name="body" value="/WEB-INF/views/login.jsp" />
+    </definition>
+
+    <definition name="register" extends="base.definition">
+        <put-attribute name="title" value="注册界面" />
+        <put-attribute name="body" value="/WEB-INF/views/register.jsp" />
+    </definition>
+</tiles-definitions>
