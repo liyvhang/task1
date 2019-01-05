@@ -85,6 +85,9 @@ private JobService jobService;
             return mav;
         }
         studentService.updateProNum(student);
+        int total =studentService.total();
+        Page page = new Page();
+        page.caculateLast(total);
         ModelAndView mav = new ModelAndView("redirect:/u/student");
         mav.addObject("student", student);
         return mav;

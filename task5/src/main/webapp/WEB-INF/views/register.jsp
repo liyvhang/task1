@@ -1,12 +1,6 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Administrator
-  Date: 2018/12/26
-  Time: 15:27
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page isELIgnored="false"%>
 <div  style="display: flex; justify-content:space-around;align-content: center;">
 <div style=" margin-top: 142px;">
     <img src="/out/img/login.png">
@@ -18,6 +12,10 @@
             请输入您的信息
         </h4>
         <div class="space-6"></div>
+        <span style="color: #CC3300">
+            <i>${items}</i>
+            <i>${error}</i>
+        </span>
         <form action="/register" method="post">
             <fieldset>
                 <span class="block input-icon input-icon-right">

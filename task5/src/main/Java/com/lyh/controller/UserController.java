@@ -48,13 +48,13 @@ public class UserController {
         System.out.println("userService==============" + userService);
         User user1 = userService.findUserByName(name);
         if (user1 ==null){
-            logger.info("用户名不存在");
+            logger.info("用户名不能为空");
+            model.addAttribute("error1","输入信息错误，请重新输入");
             return "login";
         }
         password = user1.getPassword();
-
         //验证登录输入的密码与数据库保存的密码是否一致
-        if (MD5utils.getSaltverifyMD5(user.getPassword(),password)){
+        if (password==null||MD5utils.getSaltverifyMD5(user.getPassword(),password)){
             logger.info("登录成功");
             JwtUtils jwtUtils = new JwtUtils();
 //            设置token过期时间1个小时
@@ -73,9 +73,7 @@ public class UserController {
             model.addAttribute("name",name1);
         return "redirect:/home";
         } else {
-            map.put("code", "100");
-            map.put("message", "登陆失败");
-            map.put("data", "无法找到用户信息");
+            model.addAttribute("message","用户信息输入错误，请重新输入");
            return "login";
         }
     }
@@ -92,7 +90,7 @@ public class UserController {
         String password = user.getPassword();
 
         if (userName.isEmpty()||password.isEmpty()){
-            message = "用户密码不能为空";
+            message = "用户名和密码不能为空";
             model.addAttribute("items",message);
             logger.info("用户名和密码不能为空");
             return "register";
@@ -108,6 +106,7 @@ public class UserController {
             model.addAttribute("user",user);
             return "redirect:/login";
         }else {
+            model.addAttribute("error","已有该用户，无法注册");
             logger.info("已有该用户，无法注册");
             return "register";
         }
