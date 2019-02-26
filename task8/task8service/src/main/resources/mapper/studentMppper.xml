@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lyh.dao.StudentDao">
+
+    <!-- 定义的resultMap，可以解决类的属性名和数据库列名不一致的问题-->
+    <resultMap type="Student" id="student">
+        <id property="id" column="id"  />
+        <result property="employmentStatus" column="employment_status"  />
+        <result property="excellenceDegree" column="excellence_degree"  />
+        <result property="createAt" column="create_at"  />
+        <result property="updateAt" column="update_at"  />
+        <result property="updateBy" column="update_by"  />
+        <result property="professionName" column="profession_name"  />
+    </resultMap>
+
+    <!--插入-->
+    <insert id="addStudent" useGeneratedKeys="true" keyProperty="id" parameterType="com.lyh.entity.Student">
+        insert into student
+        <trim prefix="(" suffix=")" suffixOverrides="," >
+            <if test="id != null" >
+                id,
+            </if>
+            <if test="name != null" >
+                name,
+            </if>
+            <if test="img != null" >
+                img,
+            </if>
+            <if test="intro != null" >
+                intro,
+            </if>
+            <if test="salary != null" >
+                salary,
+            </if>
+            <if test="professionName != null" >
+                profession_name,
+            </if>
+            <if test="employmentStatus != null" >
+                employment_status,
+            </if>
+            <if test="excellenceDegree != null" >
+                excellence_degree,
+            </if>
+            <if test="createAt != null" >
+                create_at,
+            </if>
+            <if test="updateAt != null" >
+                update_at,
+            </if>
+            <if test="updateBy != null" >
+                update_by,
+            </if>
+            <if test="position != null" >
+                position,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides="," >
+            <if test="id != null" >
+                #{id},
+            </if>
+            <if test="name != null" >
+                #{name},
+            </if>
+            <if test="img != null" >
+                #{img},
+            </if>
+            <if test="intro != null" >
+                #{intro},
+            </if>
+            <if test="salary != null" >
+                #{salary},
+            </if>
+            <if test="professionName != null" >
+                #{professionName},
+            </if>
+            <if test="employmentStatus != null" >
+                #{employmentStatus},
+            </if>
+            <if test="excellenceDegree != null" >
+                #{excellenceDegree},
+            </if>
+            <if test="createAt != null" >
+                #{createAt},
+            </if>
+            <if test="updateAt != null" >
+                #{updateAt},
+            </if>
+            <if test="updateBy != null" >
+                #{updateBy},
+            </if>
+            <if test="position != null" >
+                #{position},
+            </if>
+        </trim>
+    </insert>
+
+    <!--删除-->
+    <delete id="deleteStudent" parameterType="long">
+        delete
+        from student
+        where id = #{id}
+    </delete>
+
+    <!--修改-->
+    <update id="updateStudent" parameterType="student">
+          update student
+          set name = #{name},img = #{img},intro = #{intro},salary = #{salary},employment_status = #{employmentStatus},
+          excellence_degree = #{excellenceDegree},create_at = #{createAt},update_at =  #{updateAt},update_by = #{updateBy},position = #{position}
+           where id = #{id}
+    </update>
+
+    <!--根据id查询数据-->
+    <select id="selectStudentKey" resultMap="student">
+        select * from student
+        where id = #{id}
+    </select>
+
+    <!--分页查询-->
+    <select id="findStudent" resultMap="student">
+        select * from  student
+        <if test="start!=null and count!=null">
+            limit #{start},#{count}
+        </if>
+    </select>
+
+    <!--查询数据条数-->
+    <select id="total" resultType="int">
+	        select count(*) from   student
+	    </select>
+
+    <select id="selectStudent" resultMap="student">
+        select * from student where employment_status = #{employmentStatus} and excellence_degree = #{excellenceDegree}
+    </select>
+    <select id="excellenceDegreeTotal" parameterType="Boolean" resultType="int">
+        select count(*) from student where excellence_degree = #{excellenceDegree}
+    </select>
+
+    <select id="byName" parameterType="string" resultMap="student">
+        select * from student where name like CONCAT('%',#{name},'%')
+    </select>
+
+    <select id="totalJob" parameterType="string" resultType="int">
+        select count(*) from   student where profession_name = #{professionName}
+    </select>
+</mapper>

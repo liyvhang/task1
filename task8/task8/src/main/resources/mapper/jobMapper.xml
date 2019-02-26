@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lyh.dao.JobDao">
+
+    <!-- 定义的resultMap，可以解决类的属性名和数据库列名不一致的问题-->
+    <resultMap type="Job" id="job">
+        <id property="id" column="id"  />
+        <result property="developmentDirection" column="development_direction"  />
+        <result property="professionName" column="profession_name"  />
+        <result property="growthCycle" column="growth_cycle"  />
+        <result property="salaryOne" column="salary_one"  />
+        <result property="salaryTwo" column="salary_two"  />
+        <result property="salaryFive" column="salary_five"  />
+        <result property="createAt" column="create_at"  />
+        <result property="updateAt" column="update_at"  />
+        <result property="updateBy" column="update_by"  />
+    </resultMap>
+
+    <!--插入-->
+    <insert id="addJob" useGeneratedKeys="true" keyProperty="id" parameterType="job">
+        insert into job(development_direction,threshold,complexity,growth_cycle,img,intro,scarcity,salary_one,salary_two,salary_five,create_at,update_at,update_by,hint,profession_name)
+        values (
+        #{developmentDirection},
+        #{threshold},
+        #{complexity},
+        #{growthCycle},
+        #{img},
+        #{intro},
+        #{scarcity},
+        #{salaryOne},
+        #{salaryTwo},
+        #{salaryFive},
+        #{createAt},
+        #{updateAt},
+        #{updateBy},
+        #{hint},
+        #{professionName})
+    </insert>
+
+    <!--删除-->
+    <delete id="deleteJob" parameterType="long">
+        delete
+        from job
+        where id = #{id}
+    </delete>
+
+    <!--修改-->
+    <update id="updateJobNum" parameterType="string">
+          update job set learners = learners+1 where profession_name =#{professionNname}
+    </update>
+
+    <!--根据id查询数据-->
+    <select id="getId" resultMap="job">
+        select * from student
+        where id = #{id}
+    </select>
+
+    <!--查询全部数据-->
+    <select id="selectJob" resultMap="job">
+        select * from job
+    </select>
+
+    <select id="findDevelopmentDirection" resultMap="job">
+        select * from job where development_direction =#{developmentDirection}
+    </select>
+</mapper>
