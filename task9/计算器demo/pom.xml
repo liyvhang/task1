@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>lyh.com</groupId>
+    <artifactId>testTuscany</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <!-- 设置项目编码编码 -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <!-- spring版本号 -->
+        <spring.version>3.0.5.RELEASE</spring.version>
+        <!-- mybatis版本号 -->
+        <mybatis.version>3.4.1</mybatis.version>
+        <!--tuscany版本号-->
+        <tuscany.version>2.0.1</tuscany.version>
+        <maven.compiler.source>1.7</maven.compiler.source>
+        <maven.compiler.target>1.7</maven.compiler.target>
+    </properties>
+
+<dependencies>
+    <!--tuscany依赖开始-->
+    <dependency>
+        <groupId>org.apache.tuscany.sca</groupId>
+        <artifactId>tuscany-core-spi</artifactId>
+        <version>${tuscany.version}</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.apache.tuscany.sca/tuscany-contribution -->
+    <dependency>
+        <groupId>org.apache.tuscany.sca</groupId>
+        <artifactId>tuscany-contribution</artifactId>
+        <version>${tuscany.version}</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.apache.tuscany.sca/tuscany-base-runtime -->
+    <dependency>
+        <groupId>org.apache.tuscany.sca</groupId>
+        <artifactId>tuscany-base-runtime</artifactId>
+        <version>${tuscany.version}</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.apache.tuscany.sca.aggregation/tuscany-binding-rmi-runtime-aggregation -->
+    <dependency>
+        <groupId>org.apache.tuscany.sca.aggregation</groupId>
+        <artifactId>tuscany-binding-rmi-runtime-aggregation</artifactId>
+        <version>${tuscany.version}</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.apache.tuscany.sca.aggregation/tuscany-binding-ws-runtime-axis2-aggregation -->
+    <dependency>
+        <groupId>org.apache.tuscany.sca.aggregation</groupId>
+        <artifactId>tuscany-binding-ws-runtime-axis2-aggregation</artifactId>
+        <version>${tuscany.version}</version>
+    </dependency>
+    <dependency>
+        <groupId>org.apache.tuscany.sca</groupId>
+        <artifactId>tuscany-implementation-spring-runtime</artifactId>
+        <version>${tuscany.version}</version>
+    </dependency>
+    <dependency>
+        <groupId>org.apache.tuscany.sca</groupId>
+        <artifactId>tuscany-assembly-xml</artifactId>
+        <version>${tuscany.version}</version>
+    </dependency>
+    <dependency>
+        <groupId>org.apache.tuscany.sca</groupId>
+        <artifactId>tuscany-binding-rmi-runtime</artifactId>
+        <version>${tuscany.version}</version>
+        <scope>runtime</scope>
+    </dependency>
+    <!--tuscany依赖结束-->
+</dependencies>
+</project>

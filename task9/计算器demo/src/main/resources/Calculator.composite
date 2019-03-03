@@ -1,0 +1,27 @@
+<composite
+        xmlns="http://docs.oasis-open.org/ns/opencsa/sca/200912"
+        targetNamespace="http://com.jnshu"
+        name="Calculator">
+    <!--xmlns="http://www.osoa.org/xmlns/sca/1.0"-->
+    <!-- 服务名 引入服务-->
+    <component name="CalculatorServiceComponent">
+        <implementation.java class="com.lyh.service.serviceImpl.CalculatorServiceImpl"/>
+        <reference name="addService" target="AddComponent"/>
+        <reference name="subtractService" target="SubtractComponent"/>
+        <reference name="multiplyService" target="MultiplyComponent"/>
+        <reference name="divideService" target="DivideComponent"/>
+    </component>
+    <!-- 元件 SCA基本组成部分 -->
+    <component name="AddComponent">
+        <implementation.java class="com.lyh.service.serviceImpl.AddServiceImpl"/>
+    </component>
+    <component name="SubtractComponent">
+        <implementation.java class="com.lyh.service.serviceImpl.SubtractServiceImpl"/>
+    </component>
+    <component name="MultiplyComponent">
+        <implementation.java class="com.lyh.service.serviceImpl.MultiplyServiceImpl"/>
+    </component>
+    <component name="DivideComponent">
+        <implementation.java class="com.lyh.service.serviceImpl.DivideServiceImpl"/>
+    </component>
+</composite>
