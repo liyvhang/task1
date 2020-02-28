@@ -210,32 +210,32 @@
     <bean id="SMS" class="com.lyh.utils.SMS">
         <constructor-arg name="serverIP" value="app.cloopen.com"/>
         <constructor-arg name="serverPort" value="8883"/>
-        <constructor-arg name="accountSid" value="8aaf07086874781101687ec3f4c703e6"/>
-        <constructor-arg name="accountToken" value="0641417386474f34a5d5793cf9e6ee19"/>
-        <constructor-arg name="appId" value="8aaf07086874781101687ec3f52203ed"/>
+        <constructor-arg name="accountSid" value="8aaf0781101687ec3f4c703e6"/>
+        <constructor-arg name="accountToken" value="0641417f34a5d5793cf9e6ee19"/>
+        <constructor-arg name="appId" value="8aaf070861687ec3f52203ed"/>
     </bean>
 
     <!--sendEmail工具类-->
     <bean id="SendEmail" class="com.lyh.utils.SendEmail">
         <constructor-arg name="url" value="http://api.sendcloud.net/apiv2/mail/send"/>
-        <constructor-arg name="apiUser" value="liyuhang_test_YcbLEd"/>
-        <constructor-arg name="apiKey" value="3bTVCQJDyz7GxV2p"/>
+        <constructor-arg name="apiUser" value="liyuhaest_YcbLEd"/>
+        <constructor-arg name="apiKey" value="3bTVCyz7GxV2p"/>
         <constructor-arg name="subject" value="测试"/>
     </bean>
 
     <!--腾讯云图片上传-->
     <bean id="COSBean" class="com.lyh.entity.COSBean">
-        <property name="secretId" value="AKID02uhMruJFwQefQAMVQ6ZnocEclhOmBNQ"/>
-        <property name="secretKey" value="zlHctxlLfkohNuJYZLuEJArKYllfKk28"/>
-        <property name="bucketName" value="liyuhang-1257785836"/>
+        <property name="secretId" value="AKIruJFwQefQAMVQ6ZnocEclhOmBNQ"/>
+        <property name="secretKey" value="zlHckohNuJYZLuEJArKYllfKk28"/>
+        <property name="bucketName" value="liyuh-1257785836"/>
         <property name="regionName" value="ap-beijing"/>
     </bean>
 
     <!--阿里云图片工具类-->
     <bean id="OSSUtil" class="com.lyh.utils.OSSUtil">
         <constructor-arg name="endpoint" value="oss-cn-beijing.aliyuncs.com"/>
-        <constructor-arg name="accessKeyId" value="LTAIjYZNupTyg5Ux"/>
-        <constructor-arg name="accessKeySecret" value="50pAERENETugQJIih5asRqxkSiLG8U"/>
+        <constructor-arg name="accessKeyId" value="upTyg5Ux"/>
+        <constructor-arg name="accessKeySecret" value="50Iih5asRqxkSiLG8U"/>
         <constructor-arg name="bucketName" value="liyuhang-1"/>
     </bean>
 </beans>

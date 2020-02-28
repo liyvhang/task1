@@ -191,14 +191,14 @@
     <bean id="SendEmail" class="com.lyh.utils.SendEmail">
         <constructor-arg name="url" value="http://api.sendcloud.net/apiv2/mail/send"/>
         <constructor-arg name="apiUser" value="liyuhang_test_YcbLEd"/>
-        <constructor-arg name="apiKey" value="3bTVCQJDyz7GxV2p"/>
+        <constructor-arg name="apiKey" value="3byz7GxV2p"/>
         <constructor-arg name="subject" value="测试"/>
     </bean>
 
     <!--腾讯云图片上传-->
     <bean id="COSBean" class="com.lyh.entity.COSBean">
-        <property name="secretId" value="AKID02uhMruJFwQefQAMVQ6ZnocEclhOmBNQ"/>
-        <property name="secretKey" value="zlHctxlLfkohNuJYZLuEJArKYllfKk28"/>
+        <property name="secretId" value="AKID02uhMrQefQAMVQ6ZnocEclhOmBNQ"/>
+        <property name="secretKey" value="zlHctxluJYZLuEJArKYllfKk28"/>
         <property name="bucketName" value="liyuhang-1257785836"/>
         <property name="regionName" value="ap-beijing"/>
     </bean>
@@ -206,8 +206,8 @@
     <!--阿里云图片工具类-->
     <bean id="OSSUtil" class="com.lyh.utils.OSSUtil">
         <constructor-arg name="endpoint" value="oss-cn-beijing.aliyuncs.com"/>
-        <constructor-arg name="accessKeyId" value="LTAIjYZNupTyg5Ux"/>
-        <constructor-arg name="accessKeySecret" value="50pAERENETugQJIih5asRqxkSiLG8U"/>
-        <constructor-arg name="bucketName" value="liyuhang-1"/>
+        <constructor-arg name="accessKeyId" value="LTAIjg5Ux"/>
+        <constructor-arg name="accessKeySecret" value="50ETugQJIih5asRqxkSiLG8U"/>
+        <constructor-arg name="bucketName" value="liyuhng-1"/>
     </bean>
 </beans>
