@@ -17,7 +17,7 @@
     <maven.compiler.source>1.7</maven.compiler.source>
     <maven.compiler.target>1.7</maven.compiler.target>
     <mybatis.version>3.2.2</mybatis.version>
-    <mysql.version>5.1.43</mysql.version>
+    <mysql.version>8.0.16</mysql.version>
   </properties>
 
   <dependencies>
