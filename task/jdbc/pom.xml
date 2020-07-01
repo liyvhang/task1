@@ -48,7 +48,7 @@
       <!--日志源码-->
       <groupId>org.apache.logging.log4j</groupId>
       <artifactId>log4j-core</artifactId>
-      <version>2.7</version>
+      <version>2.13.2</version>
     </dependency>
     <dependency>
       <!--log4j日志-->
